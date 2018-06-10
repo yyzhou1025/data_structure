@@ -1,0 +1,18 @@
+package cs106a;
+
+import java.util.Scanner;
+
+public class Pythagorean {
+    public static void main (String[] args) {
+    Scanner reader = new Scanner(System.in);
+    System.out.println("Enter values to compute the Pythagorean problem.");
+    System.out.println("a = ");
+    double a = reader.nextDouble();
+    System.out.println("b = ");
+    double b = reader.nextDouble();
+    double c = Math.sqrt(a * a + b * b);
+    System.out.println("c = " + c);
+    reader.close();
+    
+    }
+}

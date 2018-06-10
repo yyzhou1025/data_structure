@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="411" key="DIALOG_X_ORIGIN"/>
+		<item value="94" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="563" key="dialogHeight"/>
+		<item value="900" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
+			<item value="org.eclipse.buildship.ui.importwizards"/>
+		</list>
+	</section>
+	<section name="ZipFileImportWizard">
+	</section>
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/Users/YuanyuanZhou/Downloads/homework6"/>
+			<item value="/Users/YuanyuanZhou/Downloads/lab6"/>
+			<item value="/Users/YuanyuanZhou/Desktop/homework5"/>
+			<item value="/Users/YuanyuanZhou/Desktop/lab5"/>
+			<item value="/Users/YuanyuanZhou/Downloads/homework4"/>
+			<item value="/Users/YuanyuanZhou/Downloads/lab4"/>
+			<item value="/Users/YuanyuanZhou/Documents/08722_DS/homework3"/>
+			<item value="/Users/YuanyuanZhou/Documents/08722_DS/Data-Structures-Implementations-master/hw3"/>
+			<item value="/Users/YuanyuanZhou/Desktop/homework3"/>
+			<item value="/Users/YuanyuanZhou/Desktop/lab3"/>
+			<item value="/Users/YuanyuanZhou/Documents/08722_DS/Java-script/lab2"/>
+			<item value="/Users/YuanyuanZhou/Desktop/lab1"/>
+		</list>
+	</section>
+</section>

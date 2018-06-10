@@ -1,0 +1,10 @@
+package cs106a;
+
+import java.util.Scanner;
+
+public class Question3 {
+    Scanner reader = new Scanner(System.in);
+    System.out.println("Enter values to compute the Pythagorean theorem.");
+    
+
+}

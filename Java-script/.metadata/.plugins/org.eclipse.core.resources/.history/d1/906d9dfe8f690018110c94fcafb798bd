@@ -1,0 +1,37 @@
+package cs106a;
+
+import java.util.Scanner;
+
+public class Minmax {
+    public static void main(String[] args) {
+        final int SENTINEL = 0;
+        int min = 0, max = 0;
+        int num = 1;
+        System.out.println("This program finds the largest and smallest numbers.");
+        Scanner reader = new Scanner(System.in);
+        //System.out.print("? ");
+        int firstNum = reader.nextInt();
+        min = max = reader.nextInt();
+        while (reader.nextInt() != SENTINEL) {
+            //System.out.print("? ");
+            int input = reader.nextInt();
+            min = Math.min(min, input);
+            max = Math.max(max, input);
+            num++;
+        }
+        reader.close();
+        
+        if (num == 2) {
+            System.out.println("Smallest: " + firstNum);
+            System.out.println("Biggest: " + firstNum);
+            
+        } else if (num == 1)  {
+            System.out.println ("Users must input non-SENTINEL numbers before input SENTINEL");
+        } else {
+            System.out.println("Smallest: " + min);
+            System.out.println("Biggest: " + max);
+        }
+        
+    }
+
+}

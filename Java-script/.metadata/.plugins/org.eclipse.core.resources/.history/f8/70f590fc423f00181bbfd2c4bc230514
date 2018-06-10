@@ -1,0 +1,199 @@
+/**
+ * 08722 Data Structures for Application Programmers.
+ *
+ * Homework Assignment 4
+ * HashTable Implementation with linear probing
+ *
+ * Andrew ID: yuanyuaz
+ * @author Yuanyuan Zhou
+ */
+public class MyHashTable implements MyHTInterface {
+    /**
+     * instance variable.
+     * the size of the array
+     */
+    private int length;
+    
+    /**
+     * the underlying data structure is array.
+     */
+    private DataItem[] hashArray;
+    
+    /**
+     * instance variable.
+     * number of collision
+     */
+    private int numberOfCollision;
+    
+    /**
+     * instance variable.
+     * initial capacity
+     */
+    private int capacity = 10;
+    
+    /**
+     * load factor.
+     * load factor = length/capacity
+     */
+    private double loadFactor;
+    
+    /**
+     * mark the deleted item.
+     */
+    private static final DataItem DELETED = new DataItem(null, 0);
+    
+    
+    public MyHashTable() {
+        hashArray = new DataItem[10];
+        length = 0;
+        numberOfCollision = 0;
+        
+    }
+    /**
+     * Constructor.
+     * @param initialCapacity int type
+     */
+    public MyHashTable(int initialCapacity) {
+        this.capacity = initialCapacity;
+        if (initialCapacity <= 0) {
+            throw new RuntimeException("Invalid initial capacity!");
+        }
+        hashArray = new DataItem[capacity];
+        length = 0;
+        numberOfCollision = 0;    
+    }
+    
+    /**
+     * static nested class.
+     * Each DataItem has String as its data value and int value to keep track of the frequency of its data value.
+     */
+    private static class DataItem {
+        /**
+         * data value.
+         */
+        private int key;
+        
+        /**
+         * the frequency of the data value.
+         */
+        private int frequency = 1;
+        
+        /**
+         * constructor.
+         * @param k string value
+         * @param fre int frequency 
+         */
+        DataItem(String k, int fre) {
+            key = k;
+            frequency = fre;
+        }
+        
+        /**
+         * return the value in DataItem.
+         * @return key string value
+         */
+        public String getValue() {
+            return key;
+        }
+        
+        /**
+         * return the frequency of the value in DataItem.
+         * @return frequency int
+         */
+        public int getFre() {
+            return frequency;
+        }
+    }
+    
+    /**
+     * Inserts a new String value (word).
+     * Frequency of each word to be stored too.
+     * @param value String value to add
+     */
+    @Override
+    public void insert(String value)  {
+        if (value == null) {
+            return;
+        }
+        if (!(value.matches("[a-zA-Z]+"))) {  
+            return;
+        }
+        DataItem item = new DataItem(value,frequency);
+        int hashVal = hashValue(key);
+        if (hashVal == -1) {
+            return;
+        }
+        while (hashArray[hashVal] != null && hashArray[hashVal] != DELETED) {
+            if (hashVal == hashVal(hashArray[hashVal].getValue())) {
+                frequency++;
+            }
+            hashVal = hashVal + 1;
+            hashVal = hashVal % hashArray.length;
+        }
+        hashArray[hashVal] = item;
+        length++;
+        
+        loadFactor = ((double) length)/((double) capacity);
+        if (loadFactor > 0.5) {
+            rehash();
+        }
+        
+        
+    }
+    /**
+     * Instead of using String's hashCode, you are to implement your own here.
+     * You need to take the table length into your account in this method.
+     *
+     * In other words, you are to combine the following two steps into one step.
+     * 1. converting Object into integer value
+     * 2. compress into the table using modular hashing (division method)
+     *
+     * Helper method to hash a string for English lowercase alphabet and blank,
+     * we have 27 total. But, you can assume that blank will not be added into
+     * your table. Refer to the instructions for the definition of words.
+     *
+     * For example, "cats" : 3*27^3 + 1*27^2 + 20*27^1 + 19*27^0 = 60,337
+     *
+     * But, to make the hash process faster, Horner's method should be applied as follows;
+     *
+     * var4*n^4 + var3*n^3 + var2*n^2 + var1*n^1 + var0*n^0 can be rewritten as
+     * (((var4*n + var3)*n + var2)*n + var1)*n + var0
+     *
+     * Note: You must use 27 for this homework.
+     *
+     * However, if you have time, I would encourage you to try with other
+     * constant values than 27 and compare the results but it is not required.
+     * @param input input string for which the hash value needs to be calculated
+     * @return int hash value of the input string
+     */
+    private int hashFunc(String input) {
+        // TODO implement this
+    }
+
+    /**
+     * doubles array length and rehash items whenever the load factor is reached.
+     */
+    private void rehash() {
+        // TODO implement this
+    }
+
+    /**
+     * private static data item nested class.
+     */
+    private static class DataItem {
+        public DataItem(Object object, int i) {
+            // TODO Auto-generated constructor stub
+        }
+        /**
+         * String value.
+         */
+        private String value;
+        /**
+         * String value's frequency.
+         */
+        private int frequency;
+
+        // TODO implement constructor and methods
+    }
+
+}

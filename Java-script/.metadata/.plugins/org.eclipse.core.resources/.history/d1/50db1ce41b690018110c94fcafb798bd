@@ -1,0 +1,22 @@
+package cs106a;
+
+import java.util.Scanner;
+
+public class Minmax {
+    public static void main(String[] args) {
+        final int SENTINEL = 0;
+        System.out.println("This program finds the largest and smallest numbers.");
+        Scanner reader = new Scanner(System.in);
+        System.out.print("? ");
+        
+       
+       while (reader.nextInt() != SENTINEL) {
+           System.out.print("? ");
+           
+           //reader.close();
+           
+       }
+        
+    }
+
+}
